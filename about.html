@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Page title shown in browser tab -->
+  <title>Credits | Elevator Types</title>
+
+  <!-- Google Fonts used for consistent typography across the site -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Shared stylesheet for layout, colors, and door animations -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<!-- Body uses center-page class to vertically and horizontally center credits panel -->
+<body class="center-page">
+
+<!-- Credits content panel -->
+<div class="panel">
+  <h2>Credits</h2>
+  <h1>Elevator Types</h1>
+
+  <!-- Short project description -->
+  <p>
+    A short comedic film about silence, performance,
+    and shared space.
+  </p>
+
+  <!-- Credits information -->
+  <p><strong>Director</strong><br>Rawan, Sudiksha, Prakrati, Shaikha</p>
+  <p><strong>"The Loud One"</strong><br> Prakrati Mamtani</p>
+  <p><strong>"The Frantic Typer</strong><br> Sudiksha Kalepu</p>
+  <p><strong>"The Selfie Queen"</strong><br>Shaikha Alkaabi</p>
+  <p><strong>"The Social Butterfly"</strong><br>Rawan Al Ali </p>
+
+  <p><strong>Course</strong><br>Communications Lab </p>
+  <p><strong>Institution</strong><br>NYU Abu Dhabi</p>
+
+  <!-- Link that triggers elevator door animation before returning to main page -->
+  <a href="#" id="returnBtn" class="back">Return to elevator</a>
+</div>
+
+<!-- Elevator doors shown when returning to the main experience -->
+<div id="returnDoors" class="door-wrapper hidden">
+  <div class="door left"></div>
+  <div class="door right"></div>
+</div>
+
+<script>
+  // Reference to the return link
+  const returnBtn = document.getElementById("returnBtn");
+
+  // Reference to the elevator doors used on exit
+  const returnDoors = document.getElementById("returnDoors");
+
+  // Handles exit animation and page transition back to the elevator
+  returnBtn.addEventListener("click", e => {
+    e.preventDefault(); // Prevent default link behavior
+
+    // Make doors visible
+    returnDoors.classList.remove("hidden");
+
+    // Ensure doors start closed
+    returnDoors.classList.remove("open");
+
+    // Force browser reflow so CSS transition plays correctly
+    returnDoors.offsetHeight;
+
+    // Animate doors opening
+    returnDoors.classList.add("open");
+
+    // After animation completes, navigate back to index page
+    setTimeout(() => {
+      window.location.href = "index.html";
+    }, 1200);
+  });
+</script>
+
+</body>
+</html>
+

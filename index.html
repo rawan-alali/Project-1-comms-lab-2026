@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Elevator Types</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ENTRY DOORS -->
+<div id="doors" class="door-wrapper">
+  <div class="door left"></div>
+  <div class="door right"></div>
+
+  <div class="door-ui">
+    <h1>Elevator Types</h1>
+    <p>30MFF World Premiere</p>
+    <button id="enterBtn">ENTER</button>
+  </div>
+</div>
+
+<!-- EXIT DOORS -->
+<div id="exitDoors" class="door-wrapper hidden">
+  <div class="door left"></div>
+  <div class="door right"></div>
+</div>
+
+<!-- SHAFT -->
+<div id="shaft" class="hidden">
+
+  <div id="floorIndicator">G</div>
+
+  <section class="floor" data-floor="G">
+    <div class="panel">
+      <h2>Ground Floor</h2>
+      <h1>Inside the Elevator</h1>
+      <p>Strangers share a small space.<br>Scroll to begin.</p>
+    </div>
+  </section>
+
+  <section class="floor" data-floor="—">
+    <div class="panel">
+      <h2>About</h2>
+      <h1>Elevator Types</h1>
+      <p>
+        A short comedic film set entirely inside an elevator,
+        observing awkward rituals and performances between strangers.
+      </p>
+      <p>Scroll to meet the passengers.</p>
+    </div>
+  </section>
+
+  <section class="floor" data-floor="1">
+    <div class="panel">
+      <h2>Floor 1</h2>
+      <img class="character-img" src="selfie.png">
+      <h1>The Selfie Queen</h1>
+      <p>Treats the mirror like a stage.</p>
+    </div>
+  </section>
+
+  <section class="floor" data-floor="2">
+    <div class="panel">
+      <h2>Floor 2</h2>
+      <img class="character-img" src="frantic.png">
+      <h1>The Frantic One</h1>
+      <p>Always late. Presses buttons like prayers.</p>
+    </div>
+  </section>
+
+  <section class="floor" data-floor="3">
+    <div class="panel">
+      <h2>Floor 3</h2>
+      <img class="character-img" src="loud.png">
+      <h1>The Loud One</h1>
+      <p>Speakerphone on. Everyone involved.</p>
+    </div>
+  </section>
+
+  <section class="floor" data-floor="4">
+    <div class="panel">
+      <h2>Floor 4</h2>
+      <img class="character-img" src="social.png">
+      <h1>The Social Butterfly</h1>
+      <p>Makes conversation where none was invited.</p>
+    </div>
+  </section>
+
+  <section class="floor" data-floor="F">
+    <div class="panel">
+      <h2>Final Stop</h2>
+      <h1>Doors Opening</h1>
+
+      <button id="watchBtn">Watch Video</button>
+
+      <video id="trailer" controls>
+        <source src="Rawan, Shaikha, Prakrati, Sudiksha  copy.mp4" type="video/mp4">
+      </video>
+
+      <a href="about.html" class="back">Credits</a>
+    </div>
+  </section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

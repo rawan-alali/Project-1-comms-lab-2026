@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Passengers | Elevator Types</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    body{
+      margin: 0;
+      background-color: #0a0a10;
+      color: #f1f1f5;
+      font-family: 'Inter', sans-serif;
+      height: 100vh;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* FLOOR INDICATOR */
+    #floorIndicator{
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      font-size: 12px;
+      letter-spacing: 2px;
+      padding: 8px 12px;
+      border: 1px solid rgba(255,255,255,0.4);
+      background-color: rgba(0,0,0,0.4);
+      color: #ffffff;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    .panel{
+      width: 420px;
+      padding: 50px 40px;
+      border: 1px solid rgba(255,255,255,0.2);
+      background-color: rgba(255,255,255,0.03);
+      text-align: center;
+    }
+
+    h1{
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 28px;
+      font-weight: 500;
+      margin: 15px 0 10px;
+      color: #ffd6a5;
+    }
+
+    h2{
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 13px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #9aa0ff;
+      margin-bottom: 25px;
+    }
+
+    p{
+      font-size: 15px;
+      line-height: 1.7;
+      color: #dddddd;
+      margin-bottom: 35px;
+    }
+
+    .character-img{
+      width: 220px;
+      margin: 0 auto 25px;
+      display: block;
+      border: 1px solid rgba(255,255,255,0.25);
+    }
+
+    button{
+      background: none;
+      border: 1px solid #9aa0ff;
+      color: #9aa0ff;
+      padding: 10px 22px;
+      cursor: pointer;
+      letter-spacing: 1px;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    button:hover{
+      background: #9aa0ff;
+      color: #0a0a10;
+    }
+
+    .back{
+      display: block;
+      margin-top: 30px;
+      font-size: 13px;
+      letter-spacing: 1px;
+      color: #9aa0ff;
+      text-decoration: none;
+    }
+
+    .back:hover{
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="floorIndicator">FLOOR 1</div>
+
+  <div class="panel">
+    <h2 id="floorLabel">Floor 1</h2>
+
+    <img id="charImg" class="character-img" src="selfie.png" alt="Selfie Queen">
+
+    <h1 id="name">The Selfie Queen</h1>
+
+    <p id="desc">
+      Treats the elevator mirror like a stage.
+      The ride doubles as a photoshoot.
+    </p>
+
+    <button id="nextBtn">Next stop</button>
+
+    <a href="index.html" class="back">Exit elevator</a>
+  </div>
+
+<script>
+  const characters = [
+    {
+      floor: "Floor 1",
+      name: "The Selfie Queen",
+      desc: "Treats the elevator mirror like a stage. The ride doubles as a photoshoot.",
+      img: "selfie.png"
+    },
+    {
+      floor: "Floor 2",
+      name: "The Frantic One",
+      desc: "Always late. Presses buttons like prayers.",
+      img: "frantic.png"
+    },
+    {
+      floor: "Floor 3",
+      name: "The Loud One",
+      desc: "Phone on speaker. Everyone is now involved.",
+      img: "loud.png"
+    },
+    {
+      floor: "Floor 4",
+      name: "The Social Butterfly",
+      desc: "Makes conversation where none was invited.",
+      img: "social.png"
+    }
+  ];
+
+  let index = 0;
+
+  const floorLabel = document.getElementById("floorLabel");
+  const nameEl = document.getElementById("name");
+  const descEl = document.getElementById("desc");
+  const imgEl = document.getElementById("charImg");
+  const indicator = document.getElementById("floorIndicator");
+  const nextBtn = document.getElementById("nextBtn");
+
+  nextBtn.addEventListener("click", () => {
+    nextBtn.disabled = true;
+    nextBtn.textContent = "Stopping…";
+
+    setTimeout(() => {
+      index = (index + 1) % characters.length;
+
+      floorLabel.textContent = characters[index].floor;
+      indicator.textContent = characters[index].floor;
+      nameEl.textContent = characters[index].name;
+      descEl.textContent = characters[index].desc;
+      imgEl.src = characters[index].img;
+
+      nextBtn.textContent = "Next stop";
+      nextBtn.disabled = false;
+    }, 600);
+  });
+</script>
+
+</body>
+</html>
+
