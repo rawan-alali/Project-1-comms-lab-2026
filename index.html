@@ -1,40 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Elevator Types</title>
+  <!-----Page title shown in browser tab ---> 
+  <title>Types of People in the Elevator</title>
 
+  <!-- Google Fonts: Space Grotesk for headings -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
 
+  <!-- Main stylesheet controlling layout, colors, and animations -->
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- ENTRY DOORS -->
+<!-- ENTRY DOORS: shown on initial load, open when user clicks ENTER -->
 <div id="doors" class="door-wrapper">
   <div class="door left"></div>
   <div class="door right"></div>
 
+  <!-- Centered UI displayed on top of the closed doors -->
   <div class="door-ui">
-    <h1>Elevator Types</h1>
+    <h1>Types of People in the Elevator</h1>
     <p>30MFF World Premiere</p>
     <button id="enterBtn">ENTER</button>
   </div>
 </div>
 
-<!-- EXIT DOORS -->
+<!-- EXIT DOORS: reused later when the user exits to watch the video -->
 <div id="exitDoors" class="door-wrapper hidden">
   <div class="door left"></div>
   <div class="door right"></div>
 </div>
 
-<!-- SHAFT -->
+<!-- SHAFT: main scrolling container that simulates vertical elevator movement -->
 <div id="shaft" class="hidden">
 
+  <!-- Floor indicator that updates as the user scrolls -->
   <div id="floorIndicator">G</div>
 
+  <!-- GROUND FLOOR:  moment before movement begins -->
   <section class="floor" data-floor="G">
     <div class="panel">
       <h2>Ground Floor</h2>
@@ -43,10 +49,11 @@
     </div>
   </section>
 
+  <!-- ABOUT / CONTEXT: introduces the film before characters appear -->
   <section class="floor" data-floor="—">
     <div class="panel">
       <h2>About</h2>
-      <h1>Elevator Types</h1>
+      <h1>Types of People in the Elevator</h1>
       <p>
         A short comedic film set entirely inside an elevator,
         observing awkward rituals and performances between strangers.
@@ -55,6 +62,7 @@
     </div>
   </section>
 
+  <!-- FLOOR 1: first character stop -->
   <section class="floor" data-floor="1">
     <div class="panel">
       <h2>Floor 1</h2>
@@ -64,6 +72,7 @@
     </div>
   </section>
 
+  <!-- FLOOR 2: second character stop -->
   <section class="floor" data-floor="2">
     <div class="panel">
       <h2>Floor 2</h2>
@@ -73,6 +82,7 @@
     </div>
   </section>
 
+  <!-- FLOOR 3: third character stop -->
   <section class="floor" data-floor="3">
     <div class="panel">
       <h2>Floor 3</h2>
@@ -82,6 +92,7 @@
     </div>
   </section>
 
+  <!-- FLOOR 4: fourth character stop -->
   <section class="floor" data-floor="4">
     <div class="panel">
       <h2>Floor 4</h2>
@@ -91,23 +102,29 @@
     </div>
   </section>
 
+  <!-- FINAL STOP: user exits the elevator and can watch the trailer -->
   <section class="floor" data-floor="F">
     <div class="panel">
       <h2>Final Stop</h2>
       <h1>Doors Opening</h1>
 
+      <!-- Button triggers exit doors animation before video appears -->
       <button id="watchBtn">Watch Video</button>
 
+      <!-- Film trailer, hidden until exit animation completes -->
       <video id="trailer" controls>
         <source src="Rawan, Shaikha, Prakrati, Sudiksha  copy.mp4" type="video/mp4">
       </video>
 
+      <!-- Link to credits page -->
       <a href="about.html" class="back">Credits</a>
     </div>
   </section>
 
 </div>
 
+<!-- JavaScript controlling door animations, scrolling behavior, and interactions -->
 <script src="script.js"></script>
 </body>
 </html>
+
